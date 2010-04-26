@@ -1,9 +1,0 @@
-#!/bin/bash
-if [ -n "$1" ]; then
-    git add --all
-    git commit -m "$@"
-    git push origin master
-else
-    echo "Please provide a commit message."
-fi
-echo ""
