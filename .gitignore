@@ -1,9 +1,1 @@
-#!/bin/bash
-if [ -n "$1" ]; then
-    git add --all
-    git commit -m "$@"
-    git push github master
-else
-    echo "Please provide a commit message."
-fi
-echo ""
+push
