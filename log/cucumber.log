@@ -140,3 +140,145 @@ Rendering template within layouts/articles
 Rendering articles/index
 Completed in 11ms (View: 9, DB: 1) | 200 OK [http://www.example.com/articles]
   [4;35;1mSQL (0.6ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+REQUESTING PAGE: GET /articles/new with {} and HTTP headers {}
+
+
+Processing ArticlesController#new (for 127.0.0.1 at 2010-04-26 11:06:07) [GET]
+  [4;36;1mArticle Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `articles`[0m
+Rendering template within layouts/articles
+Rendering articles/new
+Completed in 113ms (View: 69, DB: 41) | 200 OK [http://www.example.com/articles/new]
+REQUESTING PAGE: POST /articles with {"article"=>{"author"=>"author 1", "title"=>"title 1", "published"=>"0", "content"=>"content 1", "brief"=>"brief 1"}, "commit"=>"Create"} and HTTP headers {"HTTP_REFERER"=>"/articles/new"}
+
+
+Processing ArticlesController#create (for 127.0.0.1 at 2010-04-26 11:06:07) [POST]
+  Parameters: {"article"=>{"title"=>"title 1", "author"=>"author 1", "published"=>"0", "content"=>"content 1", "brief"=>"brief 1"}, "commit"=>"Create"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mArticle Create (0.2ms)[0m   [0;1mINSERT INTO `articles` (`created_at`, `title`, `author`, `published`, `updated_at`, `content`, `brief`) VALUES('2010-04-26 15:06:07', 'title 1', 'author 1', 0, '2010-04-26 15:06:07', 'content 1', 'brief 1')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/articles/2
+Completed in 5ms (DB: 1) | 302 Found [http://www.example.com/articles]
+REQUESTING PAGE: GET http://www.example.com/articles/2 with {} and HTTP headers {"HTTP_REFERER"=>"/articles"}
+
+
+Processing ArticlesController#show (for 127.0.0.1 at 2010-04-26 11:06:08) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mArticle Load (0.4ms)[0m   [0;1mSELECT * FROM `articles` WHERE (`articles`.`id` = 2) [0m
+Rendering template within layouts/articles
+Rendering articles/show
+Completed in 5ms (View: 3, DB: 1) | 200 OK [http://www.example.com/articles/2]
+  [4;35;1mSQL (0.7ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mArticle Create (0.2ms)[0m   [0;1mINSERT INTO `articles` (`created_at`, `title`, `author`, `published`, `updated_at`, `content`, `brief`) VALUES('2010-04-26 15:06:08', 'title 1', 'author 1', 0, '2010-04-26 15:06:08', 'content 1', 'brief 1')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mArticle Create (0.2ms)[0m   [0mINSERT INTO `articles` (`created_at`, `title`, `author`, `published`, `updated_at`, `content`, `brief`) VALUES('2010-04-26 15:06:08', 'title 2', 'author 2', 1, '2010-04-26 15:06:08', 'content 2', 'brief 2')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mArticle Create (0.2ms)[0m   [0;1mINSERT INTO `articles` (`created_at`, `title`, `author`, `published`, `updated_at`, `content`, `brief`) VALUES('2010-04-26 15:06:08', 'title 3', 'author 3', 0, '2010-04-26 15:06:08', 'content 3', 'brief 3')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mArticle Create (0.2ms)[0m   [0mINSERT INTO `articles` (`created_at`, `title`, `author`, `published`, `updated_at`, `content`, `brief`) VALUES('2010-04-26 15:06:08', 'title 4', 'author 4', 1, '2010-04-26 15:06:08', 'content 4', 'brief 4')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET http://www.example.com/articles with {} and HTTP headers {}
+
+
+Processing ArticlesController#index (for 127.0.0.1 at 2010-04-26 11:06:08) [GET]
+  [4;35;1mArticle Load (0.3ms)[0m   [0mSELECT * FROM `articles` [0m
+Rendering template within layouts/articles
+Rendering articles/index
+Completed in 13ms (View: 11, DB: 3) | 200 OK [http://www.example.com/articles]
+REQUESTING PAGE: DELETE /articles/5 with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/articles"}
+
+
+Processing ArticlesController#destroy (for 127.0.0.1 at 2010-04-26 11:06:08) [DELETE]
+  Parameters: {"id"=>"5"}
+  [4;36;1mArticle Load (0.3ms)[0m   [0;1mSELECT * FROM `articles` WHERE (`articles`.`id` = 5) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mArticle Destroy (0.2ms)[0m   [0;1mDELETE FROM `articles` WHERE `id` = 5[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/articles
+Completed in 3ms (DB: 1) | 302 Found [http://www.example.com/articles/5]
+REQUESTING PAGE: GET http://www.example.com/articles with {} and HTTP headers {"HTTP_REFERER"=>"/articles/5"}
+
+
+Processing ArticlesController#index (for 127.0.0.1 at 2010-04-26 11:06:08) [GET]
+  [4;36;1mArticle Load (0.4ms)[0m   [0;1mSELECT * FROM `articles` [0m
+Rendering template within layouts/articles
+Rendering articles/index
+Completed in 11ms (View: 9, DB: 1) | 200 OK [http://www.example.com/articles]
+  [4;35;1mSQL (1.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+REQUESTING PAGE: GET /articles/new with {} and HTTP headers {}
+
+
+Processing ArticlesController#new (for 127.0.0.1 at 2010-04-26 11:06:10) [GET]
+  [4;36;1mArticle Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `articles`[0m
+Rendering template within layouts/articles
+Rendering articles/new
+Completed in 38ms (View: 31, DB: 4) | 200 OK [http://www.example.com/articles/new]
+REQUESTING PAGE: POST /articles with {"article"=>{"author"=>"author 1", "title"=>"title 1", "published"=>"0", "content"=>"content 1", "brief"=>"brief 1"}, "commit"=>"Create"} and HTTP headers {"HTTP_REFERER"=>"/articles/new"}
+
+
+Processing ArticlesController#create (for 127.0.0.1 at 2010-04-26 11:06:10) [POST]
+  Parameters: {"article"=>{"title"=>"title 1", "author"=>"author 1", "published"=>"0", "content"=>"content 1", "brief"=>"brief 1"}, "commit"=>"Create"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mArticle Create (0.2ms)[0m   [0;1mINSERT INTO `articles` (`created_at`, `title`, `author`, `published`, `updated_at`, `content`, `brief`) VALUES('2010-04-26 15:06:10', 'title 1', 'author 1', 0, '2010-04-26 15:06:10', 'content 1', 'brief 1')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/articles/7
+Completed in 5ms (DB: 2) | 302 Found [http://www.example.com/articles]
+REQUESTING PAGE: GET http://www.example.com/articles/7 with {} and HTTP headers {"HTTP_REFERER"=>"/articles"}
+
+
+Processing ArticlesController#show (for 127.0.0.1 at 2010-04-26 11:06:10) [GET]
+  Parameters: {"id"=>"7"}
+  [4;36;1mArticle Load (0.3ms)[0m   [0;1mSELECT * FROM `articles` WHERE (`articles`.`id` = 7) [0m
+Rendering template within layouts/articles
+Rendering articles/show
+Completed in 5ms (View: 3, DB: 1) | 200 OK [http://www.example.com/articles/7]
+  [4;35;1mSQL (0.6ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mArticle Create (0.2ms)[0m   [0;1mINSERT INTO `articles` (`created_at`, `title`, `author`, `published`, `updated_at`, `content`, `brief`) VALUES('2010-04-26 15:06:10', 'title 1', 'author 1', 0, '2010-04-26 15:06:10', 'content 1', 'brief 1')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mArticle Create (0.2ms)[0m   [0mINSERT INTO `articles` (`created_at`, `title`, `author`, `published`, `updated_at`, `content`, `brief`) VALUES('2010-04-26 15:06:10', 'title 2', 'author 2', 1, '2010-04-26 15:06:10', 'content 2', 'brief 2')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mArticle Create (0.1ms)[0m   [0;1mINSERT INTO `articles` (`created_at`, `title`, `author`, `published`, `updated_at`, `content`, `brief`) VALUES('2010-04-26 15:06:10', 'title 3', 'author 3', 0, '2010-04-26 15:06:10', 'content 3', 'brief 3')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mArticle Create (0.1ms)[0m   [0mINSERT INTO `articles` (`created_at`, `title`, `author`, `published`, `updated_at`, `content`, `brief`) VALUES('2010-04-26 15:06:10', 'title 4', 'author 4', 1, '2010-04-26 15:06:10', 'content 4', 'brief 4')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+REQUESTING PAGE: GET http://www.example.com/articles with {} and HTTP headers {}
+
+
+Processing ArticlesController#index (for 127.0.0.1 at 2010-04-26 11:06:10) [GET]
+  [4;35;1mArticle Load (0.3ms)[0m   [0mSELECT * FROM `articles` [0m
+Rendering template within layouts/articles
+Rendering articles/index
+Completed in 13ms (View: 11, DB: 3) | 200 OK [http://www.example.com/articles]
+REQUESTING PAGE: DELETE /articles/10 with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/articles"}
+
+
+Processing ArticlesController#destroy (for 127.0.0.1 at 2010-04-26 11:06:10) [DELETE]
+  Parameters: {"id"=>"10"}
+  [4;36;1mArticle Load (0.3ms)[0m   [0;1mSELECT * FROM `articles` WHERE (`articles`.`id` = 10) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mArticle Destroy (0.2ms)[0m   [0;1mDELETE FROM `articles` WHERE `id` = 10[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/articles
+Completed in 3ms (DB: 1) | 302 Found [http://www.example.com/articles/10]
+REQUESTING PAGE: GET http://www.example.com/articles with {} and HTTP headers {"HTTP_REFERER"=>"/articles/10"}
+
+
+Processing ArticlesController#index (for 127.0.0.1 at 2010-04-26 11:06:10) [GET]
+  [4;36;1mArticle Load (0.3ms)[0m   [0;1mSELECT * FROM `articles` [0m
+Rendering template within layouts/articles
+Rendering articles/index
+Completed in 10ms (View: 8, DB: 1) | 200 OK [http://www.example.com/articles]
+  [4;35;1mSQL (1.3ms)[0m   [0mROLLBACK[0m

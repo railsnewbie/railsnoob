@@ -11,3 +11,7 @@ rake db:create:all
 rake db:sessions:create
 rake db:migrate
 rake db:test:clone
+
+# create scaffold and tests
+script/generate rspec_scaffold article title:string author:string published:boolean brief:text content:text
+script/generate feature article title:string author:string published:boolean brief:text content:text
