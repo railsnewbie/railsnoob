@@ -1,0 +1,13 @@
+# I have a hard time keeping track of all the generators and rake tasks
+# that need to be run to get things going. So I'm logging that stuff here
+# as a reference, roughly in the order it's being run
+
+# install test frameworks
+script/generate rspec
+script/generate cucumber
+
+# create databases
+rake db:create:all
+rake db:sessions:create
+rake db:migrate
+rake db:test:clone
